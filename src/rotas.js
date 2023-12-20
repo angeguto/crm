@@ -20,7 +20,7 @@ function Rotas(){
 
             <Route path="/" element={
                 <PrivateRoute>
-                    <Dashboard />
+                    <Movimento />
                 </PrivateRoute>
             } />
 

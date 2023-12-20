@@ -42,11 +42,11 @@ function NegocioCad(props){
             valor
         };
 
-        if (operacao == "new") {
+        if (operacao === "new") {
             // NOVO REGISTRO........................
             api.post("/negocios", params)
             .then((resp) => {
-                if (resp.status == 201) {
+                if (resp.status === 201) {
                     setShow(false);
                     props.onClose();
                 } else {
@@ -62,7 +62,7 @@ function NegocioCad(props){
             // EDITAR REGISTRO EXISTENTE........................
             api.put("/negocios/" + id_negocio, params)
             .then((resp) => {
-                if (resp.status == 200) {
+                if (resp.status === 200) {
                     setShow(false);
                     props.onClose();
                 } else {
@@ -83,7 +83,7 @@ function NegocioCad(props){
 
         window.addEventListener('openSidebar', (param) => {
 
-            if (param.detail.operacao == "new") {
+            if (param.detail.operacao === "new") {
                 setIdNegocio(0);
                 setEtapa("");
                 setDescricao("");
@@ -127,7 +127,7 @@ function NegocioCad(props){
         <div className="container-fluid h-100 pt-4 sidebar p-4 ">
 
             <h4 className="d-inline">
-                {operacao == "edit" ? "Editar Negócio" : "Novo Negócio"}
+                {operacao === "edit" ? "Editar Negócio" : "Novo Negócio"}
             </h4>
 
             <div className="row tela-cad">

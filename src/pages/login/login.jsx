@@ -25,7 +25,7 @@ function Login(){
         .then((resp) => {
             setLoading(false);
 
-            if (resp.status == 200)
+            if (resp.status === 200)
             {
                 localStorage.setItem("id_usuario", resp.data.id_usuario);
                 navigate("/dashboard");
